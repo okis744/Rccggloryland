@@ -1,0 +1,4465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RCCG Gloryland Parish</title>
+
+    <meta
+        name="description"
+        content="Welcome to RCCG Gloryland Parish — a place of worship, fellowship, prayer and God's presence."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --green: #176b2c;
+    --dark-green: #0c421a;
+    --light-green: #4caf50;
+
+    --cream: #f7f5e9;
+    --soft-green: #eaf5e9;
+
+    --white: #ffffff;
+    --black: #102014;
+
+    --gray: #6e786f;
+
+    --shadow:
+        0 20px 60px rgba(15, 70, 27, 0.12);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.container {
+    width: min(1150px, 90%);
+    margin: auto;
+}
+
+
+section {
+    padding: 100px 0;
+}
+
+
+.section-label {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    background: var(--soft-green);
+
+    color: var(--green);
+
+    border-radius: 50px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.section-title {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    line-height: 1.05;
+
+    color: var(--dark-green);
+
+    margin: 15px 0;
+}
+
+
+.section-text {
+    color: var(--gray);
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(1180px, 94%);
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(23,107,44,0.10);
+    border-radius: 22px;
+    box-shadow: 0 12px 45px rgba(15,70,27,0.10);
+    transition: top .35s ease,width .35s ease,box-shadow .35s ease,background .35s ease;
+}
+
+
+.navbar.scrolled {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+
+.nav-container {
+
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.logo img {
+
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: contain;
+}
+
+
+.logo-text strong {
+
+    display: block;
+
+    color: var(--dark-green);
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+.logo-text span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 9px;
+
+    margin-top: 2px;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    list-style: none;
+}
+
+
+.nav-links a {
+
+    color: #26372a;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+
+.nav-links a:hover {
+
+    color: var(--green);
+}
+
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--green);
+
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover::after {
+
+    width: 100%;
+}
+
+
+/* NAV BUTTON */
+
+.nav-give {
+
+    padding: 12px 19px;
+
+    border-radius: 30px;
+
+    background: var(--green);
+
+    color: white !important;
+}
+
+
+.nav-give:hover {
+
+    background: var(--dark-green);
+
+    transform: translateY(-2px);
+}
+
+
+/* MOBILE BUTTON */
+
+.menu-btn {
+
+    display: none;
+
+    border: none;
+
+    background: var(--soft-green);
+
+    color: var(--green);
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding-top: 78px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #123d1d;
+}
+
+.hero-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.03);
+    transition: opacity 1.2s ease, transform 6s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    background: linear-gradient(90deg, rgba(4,40,13,0.45), rgba(5,48,15,0.24), rgba(5,48,15,0.08));
+
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    border-radius: 0;
+    right: auto;
+    bottom: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+
+    width: min(1150px, 90%);
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+
+    color: white;
+}
+
+
+.hero-small {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 15px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    background: rgba(255,255,255,0.09);
+
+    border-radius: 50px;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+
+    backdrop-filter: blur(10px);
+}
+
+
+.live-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    background: #ff4b4b;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 5px rgba(255,75,75,0.12);
+}
+
+
+.hero h1 {
+
+    max-width: 750px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 8vw, 90px);
+
+    line-height: 0.98;
+
+    margin: 25px 0 20px;
+}
+
+
+.hero h1 span {
+
+    color: #a9e5ae;
+}
+
+
+.hero p {
+
+    max-width: 600px;
+
+    color: #e5eee6;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+    margin-bottom: 30px;
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 13px;
+
+    flex-wrap: wrap;
+}
+
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 15px 23px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+
+.btn-primary {
+
+    background: white;
+
+    color: var(--green);
+}
+
+
+.btn-primary:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+
+.btn-outline {
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    background: rgba(255,255,255,0.07);
+}
+
+
+.btn-outline:hover {
+
+    background: white;
+
+    color: var(--green);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+
+    background: var(--cream);
+}
+
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.about-image {
+
+    position: relative;
+}
+
+
+.about-image img {
+
+    width: 100%;
+
+    height: 500px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.about-badge {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    right: -25px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    width: 180px;
+}
+
+
+.about-badge strong {
+
+    display: block;
+
+    color: var(--green);
+
+    font-size: 25px;
+}
+
+
+.about-badge span {
+
+    color: var(--gray);
+
+    font-size: 11px;
+}
+
+
+.about-content p {
+
+    margin-bottom: 20px;
+}
+
+
+.about-points {
+
+    display: grid;
+
+    gap: 13px;
+
+    margin: 25px 0;
+}
+
+
+.about-point {
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+}
+
+
+.about-point span {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--soft-green);
+
+    color: var(--green);
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   GENERAL OVERSEER
+========================================================= */
+
+.leader {
+
+    background: white;
+}
+
+
+.leader-grid {
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.leader-image {
+
+    position: relative;
+}
+
+
+.leader-image img {
+
+    width: 100%;
+
+    height: 520px;
+
+    object-fit: cover;
+
+    object-position: top center;
+
+    border-radius: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.leader-card {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 20px;
+
+    right: 20px;
+
+    background: rgba(255,255,255,0.94);
+
+    backdrop-filter: blur(15px);
+
+    padding: 18px;
+
+    border-radius: 17px;
+}
+
+
+.leader-card strong {
+
+    display: block;
+
+    color: var(--dark-green);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+}
+
+
+.leader-card span {
+
+    color: var(--green);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.leader-content p {
+
+    color: var(--gray);
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+.leader-quote {
+
+    padding: 22px;
+
+    background: var(--cream);
+
+    border-left: 4px solid var(--green);
+
+    border-radius: 0 15px 15px 0;
+
+    color: #435046;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PARISH PASTOR
+========================================================= */
+
+.pastor {
+    background: var(--cream);
+}
+
+.pastor-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.pastor-image {
+    position: relative;
+}
+
+.pastor-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    background: #e8eee7;
+}
+
+.pastor-card {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(15px);
+    padding: 18px;
+    border-radius: 17px;
+}
+
+.pastor-card strong {
+    display: block;
+    color: var(--dark-green);
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+}
+
+.pastor-card span {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.pastor-content p {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+
+    background: var(--soft-green);
+}
+
+
+.center-heading {
+
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: auto auto 50px;
+}
+
+
+.service-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+}
+
+
+.service-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 23px;
+
+    transition: 0.3s;
+
+    border: 1px solid rgba(23,107,44,0.06);
+}
+
+
+.service-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+}
+
+
+.service-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--soft-green);
+
+    color: var(--green);
+
+    border-radius: 15px;
+
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+
+.service-card h3 {
+
+    color: var(--dark-green);
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+
+.service-card p {
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SERMONS
+========================================================= */
+
+.sermons {
+
+    background: white;
+}
+
+
+.sermon-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 22px;
+
+    margin-top: 50px;
+}
+
+
+.sermon-card {
+
+    background: white;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid #e9eee9;
+
+    transition: 0.3s;
+}
+
+
+.sermon-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow);
+}
+
+
+.sermon-image,
+.sermon-video {
+
+    height: 220px;
+
+    position: relative;
+
+    background: #071d0c;
+}
+
+
+.sermon-video iframe {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 0;
+
+    display: block;
+}
+
+
+.play-button {
+
+    position: absolute;
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--green);
+
+    display: grid;
+
+    place-items: center;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+
+    font-size: 19px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+
+.sermon-content {
+
+    padding: 22px;
+}
+
+
+.sermon-content small {
+
+    color: var(--green);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.sermon-content h3 {
+
+    color: var(--dark-green);
+
+    margin: 8px 0;
+
+    font-size: 18px;
+}
+
+
+.sermon-content p {
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   GIVING
+========================================================= */
+
+.giving {
+    background: radial-gradient(circle at 10% 20%, rgba(76,175,80,0.10), transparent 30%), var(--cream);
+}
+
+.giving-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: auto auto 45px;
+}
+
+.accounts-wrap {
+    display: grid;
+    grid-template-columns: 1fr 70px;
+    gap: 18px;
+    align-items: stretch;
+    max-width: 850px;
+    margin: auto;
+}
+
+.accounts-list {
+    display: grid;
+    gap: 18px;
+}
+
+.account-box {
+    background: white;
+    border: 1px solid #e5ebe2;
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 15px 40px rgba(15,70,27,0.07);
+    transition: 0.3s ease;
+}
+
+.account-box:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.account-bank {
+    color: var(--light-green);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.account-name {
+    color: var(--dark-green);
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.account-number-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e9eee9;
+}
+
+.account-number-label {
+    display: block;
+    color: #788078;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.account-number {
+    color: #18391d;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.copy-btn {
+    padding: 10px 17px;
+    border: none;
+    border-radius: 10px;
+    background: var(--green);
+    color: white;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 800;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.copy-btn:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+}
+
+.ready-give {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 18px;
+    background: var(--green);
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding: 18px 12px;
+}
+
+.ready-give:hover {
+    background: var(--dark-green);
+    transform: rotate(180deg) translateX(4px);
+}
+
+.transfer-done {
+    width: 100%;
+    margin-top: 18px;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 14px;
+    background: var(--soft-green);
+    color: var(--green);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.transfer-done:hover {
+    background: var(--green);
+    color: white;
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery {
+
+    background: var(--soft-green);
+}
+
+
+.gallery-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr 0.8fr;
+
+    grid-template-rows: 220px 220px;
+
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+
+.gallery-item {
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    position: relative;
+}
+
+
+.gallery-item:first-child {
+
+    grid-row: span 2;
+}
+
+
+.gallery-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+
+.gallery-item:hover img {
+
+    transform: scale(1.08);
+}
+
+
+.gallery-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.55)
+    );
+
+    opacity: 0;
+
+    transition: 0.3s;
+}
+
+
+.gallery-item:hover .gallery-overlay {
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+
+    background: white;
+}
+
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+}
+
+
+.contact-info {
+
+    display: grid;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+
+.contact-box {
+
+    display: flex;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    background: var(--cream);
+}
+
+
+.contact-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: white;
+
+    border-radius: 12px;
+
+    color: var(--green);
+}
+
+
+.contact-box strong {
+
+    display: block;
+
+    color: var(--dark-green);
+
+    font-size: 13px;
+
+    margin-bottom: 3px;
+}
+
+
+.contact-box span {
+
+    color: var(--gray);
+
+    font-size: 12px;
+}
+
+
+.contact-form {
+
+    padding: 30px;
+
+    background: var(--cream);
+
+    border-radius: 25px;
+}
+
+
+.input-group {
+
+    margin-bottom: 15px;
+}
+
+
+.input-group label {
+
+    display: block;
+
+    color: var(--dark-green);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+
+.input-group input,
+.input-group textarea {
+
+    width: 100%;
+
+    border: 1px solid #dde5db;
+
+    background: white;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+
+.input-group textarea {
+
+    height: 120px;
+
+    resize: none;
+}
+
+
+.input-group input:focus,
+.input-group textarea:focus {
+
+    border-color: var(--green);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    background: #092f12;
+
+    color: white;
+
+    padding: 60px 0 25px;
+}
+
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+.footer-logo img {
+
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: contain;
+}
+
+
+.footer-logo strong {
+
+    display: block;
+
+    font-size: 15px;
+}
+
+
+.footer-logo span {
+
+    font-size: 9px;
+
+    color: #b7ccb9;
+}
+
+
+.footer-about {
+
+    color: #b8c9bb;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    max-width: 350px;
+}
+
+
+footer h4 {
+
+    margin-bottom: 18px;
+
+    font-size: 13px;
+}
+
+
+.footer-links {
+
+    list-style: none;
+
+    display: grid;
+
+    gap: 11px;
+}
+
+
+.footer-links a {
+
+    color: #b8c9bb;
+
+    font-size: 12px;
+
+    transition: 0.3s;
+}
+
+
+.footer-links a:hover {
+
+    color: white;
+}
+
+
+.footer-bottom {
+
+    padding-top: 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    color: #8ea493;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   MOBILE BOTTOM NAVIGATION
+========================================================= */
+
+.mobile-bottom-nav {
+    display: none;
+}
+
+/* TABLET + MOBILE BOTTOM NAVIGATION */
+@media (max-width: 1024px) {
+    .mobile-bottom-nav {
+        display: grid;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2000;
+        grid-template-columns: repeat(5, 1fr);
+        background: rgba(255,255,255,0.98);
+        border-top: 1px solid #e4eae3;
+        box-shadow: 0 -10px 30px rgba(0,0,0,0.08);
+        padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    .mobile-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        min-height: 46px;
+        color: #758077;
+        font-size: 19px;
+        transition: transform .25s ease, color .25s ease;
+    }
+
+    .mobile-nav-item small {
+        font-size: 10px;
+        font-weight: 700;
+    }
+
+    .mobile-nav-item:active {
+        transform: scale(.92);
+    }
+
+    body {
+        padding-bottom: 70px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .mobile-bottom-nav {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .mobile-nav-item {
+        min-height: 54px;
+        font-size: 21px;
+    }
+
+    .mobile-nav-item small {
+        font-size: 11px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 0;
+    }
+}
+
+/* =========================================================
+   SCROLL ANIMATION
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition: 0.8s ease;
+}
+
+
+.reveal.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   EXTRA MOTION + GALLERY ACTION
+========================================================= */
+.btn,.nav-links a,.service-card,.sermon-card,.account-box,.contact-box,.gallery-item,.menu-btn{will-change:transform}
+.whatsapp-btn{
+    transition:transform .3s ease,background .3s ease,box-shadow .3s ease;
+}
+.whatsapp-btn:hover{
+    transform:translateY(-3px);
+    background:#128c3a !important;
+    box-shadow:0 12px 28px rgba(18,140,58,.22);
+}
+.gallery-item{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.gallery-item:hover{transform:translateY(-7px);box-shadow:0 20px 45px rgba(15,70,27,.16)}
+.gallery-action{text-align:center}.gallery-view-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:32px;padding:14px 25px;border-radius:999px;background:var(--green);color:white;font-size:13px;font-weight:800;box-shadow:0 12px 28px rgba(23,107,44,.18);transition:transform .3s ease,background .3s ease,box-shadow .3s ease}.gallery-view-btn:hover{transform:translateY(-4px);background:var(--dark-green);box-shadow:0 18px 35px rgba(23,107,44,.25)}
+.menu-btn.active{transform:rotate(90deg);background:var(--green);color:white}.nav-links li{animation:navItemIn .45s ease both}@keyframes navItemIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width: 900px) {
+
+    /* Hide the desktop/top navbar on mobile.
+       The bottom mobile navigation remains available. */
+    .navbar {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 0;
+    }
+
+    .nav-links {
+        display: none !important;
+        position: fixed;
+
+        top:84px;
+        left:50%;
+        width:min(94%,420px);
+
+        background:rgba(255,255,255,.97);border:1px solid rgba(23,107,44,.10);border-radius:22px;backdrop-filter:blur(20px);
+        flex-direction:column;
+
+        padding: 25px;
+
+        gap: 22px;
+
+        transform:translate(-50%,-150%);opacity:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s ease;
+
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+
+
+    .nav-links.active{transform:translate(-50%,0);opacity:1}
+
+
+    .menu-btn {
+        display: none !important;
+    }
+
+    .nav-links a{display:flex;align-items:center;justify-content:center;width:100%;padding:11px 14px;border-radius:12px}
+    .nav-links a:hover{background:var(--soft-green);transform:translateX(4px)}
+
+
+    .about-grid,
+    .leader-grid,
+    .pastor-grid,
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .service-grid,
+    .sermon-grid {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .accounts-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .ready-give {
+        min-height: 58px;
+        writing-mode: horizontal-tb;
+        transform: none;
+        border-radius: 14px;
+    }
+
+    .ready-give:hover {
+        transform: translateY(-2px);
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media(max-width: 600px) {
+
+    section {
+
+        padding: 75px 0;
+    }
+
+
+    .hero h1 {
+
+        font-size: 52px;
+    }
+
+
+    .service-grid,
+    .sermon-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .gallery-grid {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows: 200px 200px 200px;
+    }
+
+
+    .gallery-item:first-child {
+
+        grid-row: span 2;
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: column;
+    }
+
+
+    body {
+        padding-bottom: 76px;
+    }
+
+
+    .mobile-bottom-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2000;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        background: rgba(255,255,255,0.98);
+        border-top: 1px solid #e4eae3;
+        box-shadow: 0 -10px 30px rgba(0,0,0,0.08);
+        padding: 8px 6px calc(8px + env(safe-area-inset-bottom));
+        backdrop-filter: blur(12px);
+    }
+
+
+    .mobile-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        color: #758077;
+        font-size: 18px;
+        transition: 0.25s ease;
+    }
+
+
+    .mobile-nav-item small {
+        font-size: 9px;
+        font-weight: 700;
+    }
+
+
+    .mobile-nav-item.active {
+        color: var(--green);
+    }
+
+
+    .mobile-nav-item.active span {
+        transform: translateY(-2px);
+    }
+
+
+    .account-box {
+        padding: 20px;
+    }
+
+    .account-number-row {
+        align-items: flex-start;
+    }
+
+    .account-number {
+        font-size: 17px;
+    }
+
+
+    .bank-row {
+
+        align-items: flex-start;
+    }
+
+
+    .bank-row strong {
+
+        font-size: 11px;
+    }
+
+    .bank-picker-row {
+        grid-template-columns: 1fr;
+    }
+
+    .bank-open-btn {
+        min-height: 45px;
+    }
+}
+
+
+/* =========================================================
+   DIRECT WHATSAPP CHAT CARD
+========================================================= */
+.whatsapp-direct-card {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #f4fff6, #ffffff);
+    border: 1px solid #dcecdf;
+    box-shadow: 0 18px 45px rgba(23, 107, 44, 0.10);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.whatsapp-direct-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 55px rgba(23, 107, 44, 0.16);
+}
+
+.whatsapp-direct-icon {
+    width: 72px;
+    height: 72px;
+    flex: 0 0 72px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #176b2c;
+    color: #fff;
+    font-size: 30px;
+    box-shadow: 0 10px 25px rgba(23, 107, 44, 0.20);
+}
+
+.whatsapp-direct-label {
+    display: inline-block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #176b2c;
+}
+
+.whatsapp-direct-content h3 {
+    margin: 0 0 8px;
+    font-size: 25px;
+}
+
+.whatsapp-direct-content p {
+    margin: 0 0 18px;
+    line-height: 1.7;
+    color: #667066;
+    max-width: 680px;
+}
+
+.whatsapp-direct-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: auto !important;
+    padding: 13px 22px;
+    border-radius: 12px;
+    background: #176b2c;
+    color: #fff !important;
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-direct-link:hover {
+    background: #0f5420;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(23, 107, 44, 0.22);
+}
+
+@media (max-width: 700px) {
+    .whatsapp-direct-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 18px;
+    }
+
+    .whatsapp-direct-icon {
+        width: 60px;
+        height: 60px;
+        flex-basis: 60px;
+        font-size: 25px;
+    }
+
+    .whatsapp-direct-content h3 {
+        font-size: 21px;
+    }
+
+    .whatsapp-direct-link {
+        width: 100% !important;
+    }
+}
+
+
+/* Mobile layout corrections */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+body {
+    -webkit-text-size-adjust: 100%;
+}
+.container, .hero-content, section, main, header, footer {
+    min-width: 0;
+}
+.container {
+    width: min(100% - 32px, 1150px);
+}
+section {
+    scroll-margin-top: 18px;
+}
+p, h1, h2, h3, h4, a, span, strong, label {
+    overflow-wrap: anywhere;
+}
+button, input, select, textarea {
+    max-width: 100%;
+}
+img, video, iframe {
+    max-width: 100%;
+}
+.hero, .hero-content, .about-grid, .leader-grid, .pastor-grid,
+.contact-grid, .service-grid, .sermon-grid, .gallery-grid,
+.accounts-wrap, .footer-grid {
+    min-width: 0;
+}
+.service-card, .sermon-card, .account-box, .contact-box,
+.gallery-item, .whatsapp-direct-card, .contact-form {
+    min-width: 0;
+}
+.mobile-bottom-nav {
+    padding-bottom: calc(7px + env(safe-area-inset-bottom));
+}
+.mobile-nav-item {
+    min-width: 0;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+}
+.mobile-nav-item.active {
+    color: var(--green);
+}
+.mobile-nav-item.active span {
+    transform: translateY(-2px);
+}
+.mobile-nav-item span {
+    line-height: 1.1;
+    transition: transform .2s ease;
+}
+@media (max-width: 700px) {
+    .container, .hero-content {
+        width: calc(100% - 32px);
+    }
+    section {
+        padding: 48px 0;
+    }
+    .section-title {
+        font-size: clamp(28px, 8vw, 38px);
+        line-height: 1.12;
+    }
+    .section-text {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+    .hero {
+        min-height: 100svh;
+        min-height: 100dvh;
+        padding-inline: 0;
+    }
+    .hero-content {
+        padding-top: 70px;
+        padding-bottom: 90px;
+    }
+    .hero h1 {
+        font-size: clamp(34px, 10vw, 54px);
+        line-height: 1.02;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+    .hero p {
+        max-width: 100%;
+        font-size: 14px;
+    }
+    .hero-buttons {
+        width: 100%;
+        max-width: 340px;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .service-grid, .sermon-grid, .gallery-grid,
+    .footer-grid, .about-grid, .leader-grid,
+    .pastor-grid, .contact-grid, .accounts-wrap {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .gallery-grid {
+        grid-auto-rows: auto;
+    }
+    .gallery-item, .gallery-item:first-child {
+        grid-row: auto;
+        min-height: 210px;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .about-image img, .leader-image img, .pastor-image img {
+        width: 100%;
+        height: auto;
+        max-height: 420px;
+        object-fit: cover;
+    }
+    .sermon-video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        height: auto;
+    }
+    .sermon-video iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .account-number-row {
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 0;
+    }
+    .account-number {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+    .contact-box {
+        align-items: flex-start;
+    }
+    .contact-box > div:last-child {
+        min-width: 0;
+    }
+    .whatsapp-direct-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .whatsapp-direct-link, .whatsapp-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-bottom {
+        gap: 8px;
+        font-size: 11px;
+    }
+    body {
+        padding-bottom: calc(72px + env(safe-area-inset-bottom));
+    }
+}
+@media (max-width: 390px) {
+    .container, .hero-content {
+        width: calc(100% - 26px);
+    }
+    .mobile-nav-item small {
+        font-size: 8px;
+    }
+    .mobile-bottom-nav {
+        padding-inline: 2px;
+    }
+    .hero h1 {
+        font-size: clamp(32px, 9.6vw, 42px);
+    }
+    .gallery-item, .gallery-item:first-child {
+        min-height: 180px;
+    }
+}
+@media (min-width: 701px) and (max-width: 1024px) {
+    .container, .hero-content {
+        width: calc(100% - 48px);
+    }
+    .service-grid, .sermon-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 220px;
+    }
+}
+
+</style>
+
+<style>
+/* =====================================================
+   EXTRA SMOOTH PAGE ANIMATIONS & TRANSITIONS
+===================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Page-load entrance */
+body {
+    animation: pageFadeIn 0.9s ease both;
+}
+
+@keyframes pageFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Hero entrance */
+.hero .container > * {
+    opacity: 0;
+    transform: translateY(28px);
+    animation: heroRise 0.8s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+.hero .container > *:nth-child(1) { animation-delay: .12s; }
+.hero .container > *:nth-child(2) { animation-delay: .24s; }
+.hero .container > *:nth-child(3) { animation-delay: .36s; }
+.hero .container > *:nth-child(4) { animation-delay: .48s; }
+
+@keyframes heroRise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity .75s ease,
+        transform .75s cubic-bezier(.22,1,.36,1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Images gently zoom when entering */
+img {
+    transition: transform .6s cubic-bezier(.22,1,.36,1),
+                filter .5s ease;
+}
+
+.gallery-item,
+.about-image {
+    overflow: hidden;
+}
+
+.gallery-item:hover img,
+.about-image:hover img {
+    transform: scale(1.045);
+}
+
+/* Cards */
+.service-card,
+.contact-box,
+.account-box,
+.gallery-item,
+.event-card,
+.info-card {
+    transition:
+        transform .35s cubic-bezier(.22,1,.36,1),
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.service-card:hover,
+.contact-box:hover,
+.account-box:hover,
+.event-card:hover,
+.info-card:hover {
+    transform: translateY(-7px);
+}
+
+/* Buttons */
+.btn,
+button,
+.gallery-view-btn,
+.mobile-nav-item,
+.whatsapp-btn,
+.copy-btn {
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background-color .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+}
+
+.btn:hover,
+.gallery-view-btn:hover,
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:active,
+button:active,
+.gallery-view-btn:active,
+.whatsapp-btn:active {
+    transform: scale(.97);
+}
+
+/* Navigation */
+.navbar,
+.mobile-bottom-nav {
+    transition: box-shadow .35s ease, background .35s ease;
+}
+
+.nav-links a {
+    transition: color .25s ease, transform .25s ease;
+}
+
+.nav-links a:hover {
+    transform: translateY(-2px);
+}
+
+/* Section headings */
+.section-label,
+.section-title,
+.section-text {
+    transition: opacity .4s ease, transform .5s ease;
+}
+
+/* Respect reduced-motion accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+
+<style>
+/* Responsive layout fixes */
+*, *::before, *::after {
+    min-width: 0;
+}
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    scroll-padding-top: 20px;
+}
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+.container,
+.hero-content {
+    width: min(1150px, calc(100% - 48px));
+}
+section {
+    padding-block: clamp(52px, 7vw, 100px);
+}
+img, iframe, video {
+    max-width: 100%;
+}
+.hero {
+    min-height: max(620px, 100svh);
+    min-height: max(620px, 100vh);
+}
+.hero-content {
+    padding-block: 80px;
+}
+.hero h1 {
+    font-size: clamp(2.6rem, 7vw, 5.6rem);
+    overflow-wrap: anywhere;
+}
+.hero p,
+.section-text,
+.about-content p,
+.leader-content p,
+.pastor-content p {
+    overflow-wrap: anywhere;
+}
+.about-grid,
+.leader-grid,
+.pastor-grid {
+    gap: clamp(28px, 5vw, 70px);
+}
+.about-image img,
+.leader-image img,
+.pastor-image img {
+    height: clamp(300px, 44vw, 520px);
+}
+.about-badge {
+    right: clamp(10px, 2vw, 25px);
+    max-width: calc(100% - 20px);
+}
+.service-grid,
+.sermon-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.gallery-grid {
+    grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, .8fr));
+}
+.sermon-image,
+.sermon-video {
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+.sermon-video iframe {
+    width: 100%;
+    height: 100%;
+}
+.accounts-wrap {
+    grid-template-columns: minmax(0, 1fr) 58px;
+}
+.account-number-row {
+    flex-wrap: wrap;
+}
+.account-number {
+    overflow-wrap: anywhere;
+}
+.contact-grid {
+    align-items: start;
+}
+.contact-form {
+    min-width: 0;
+}
+.input-group input,
+.input-group textarea,
+.input-group button {
+    max-width: 100%;
+}
+.footer-grid {
+    grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr));
+}
+.mobile-bottom-nav a {
+    min-width: 0;
+    text-align: center;
+}
+@media (max-width: 1024px) {
+    .container,
+    .hero-content {
+        width: calc(100% - 40px);
+    }
+    .about-grid,
+    .leader-grid,
+    .pastor-grid,
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .about-image,
+    .leader-image,
+    .pastor-image {
+        width: min(100%, 650px);
+        margin-inline: auto;
+    }
+    .service-grid,
+    .sermon-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        grid-auto-rows: clamp(170px, 28vw, 250px);
+    }
+    .gallery-item:first-child {
+        grid-row: auto;
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+    .navbar {
+        display: none !important;
+    }
+    .hero {
+        padding-top: 0;
+    }
+    body {
+        padding-bottom: 82px;
+    }
+}
+@media (max-width: 700px) {
+    .container,
+    .hero-content {
+        width: calc(100% - 36px);
+    }
+    section {
+        padding-block: 54px;
+    }
+    .section-title {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        line-height: 1.12;
+    }
+    .section-label {
+        font-size: 10px;
+        letter-spacing: 1.4px;
+    }
+    .hero {
+        min-height: 680px;
+        min-height: 100svh;
+    }
+    .hero-content {
+        padding-block: 88px 65px;
+    }
+    .hero h1 {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+        line-height: 1.04;
+        margin-block: 20px 16px;
+    }
+    .hero p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        width: min(100%, 340px);
+    }
+    .hero-buttons .btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 13px 16px;
+    }
+    .about-grid,
+    .leader-grid,
+    .pastor-grid {
+        gap: 32px;
+    }
+    .about-image img,
+    .leader-image img,
+    .pastor-image img {
+        height: clamp(280px, 95vw, 430px);
+        border-radius: 22px;
+    }
+    .about-badge {
+        bottom: 14px;
+        right: 12px;
+        width: auto;
+        padding: 14px;
+    }
+    .about-badge strong {
+        font-size: 21px;
+    }
+    .leader-card,
+    .pastor-card {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 14px;
+    }
+    .service-grid,
+    .sermon-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+        margin-top: 30px;
+    }
+    .service-card,
+    .sermon-content {
+        padding: 22px;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: clamp(135px, 42vw, 205px);
+        gap: 10px;
+        margin-top: 28px;
+    }
+    .gallery-item {
+        border-radius: 14px;
+    }
+    .accounts-wrap {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+    .ready-give {
+        min-height: 48px;
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 14px;
+    }
+    .ready-give:hover {
+        transform: translateY(-2px);
+    }
+    .account-box {
+        padding: 18px;
+    }
+    .account-number-row {
+        align-items: center;
+        gap: 12px;
+    }
+    .account-number {
+        font-size: clamp(15px, 4.5vw, 19px);
+        letter-spacing: .3px;
+    }
+    .copy-btn {
+        padding: 10px 13px;
+    }
+    .contact-grid {
+        gap: 28px;
+    }
+    .contact-form {
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .contact-box {
+        padding: 14px;
+        gap: 12px;
+    }
+    .contact-box span {
+        overflow-wrap: anywhere;
+    }
+    .whatsapp-direct-card {
+        padding: 20px;
+        gap: 16px;
+    }
+    .whatsapp-direct-content h3 {
+        font-size: 21px;
+        overflow-wrap: anywhere;
+    }
+    .whatsapp-direct-link {
+        width: 100% !important;
+    }
+    .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 1.7;
+    }
+    .mobile-bottom-nav {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        padding: 7px 4px calc(7px + env(safe-area-inset-bottom));
+    }
+    .mobile-nav-item {
+        gap: 3px;
+        font-size: 17px;
+    }
+    .mobile-nav-item small {
+        font-size: clamp(8px, 2.4vw, 10px);
+    }
+}
+@media (max-width: 380px) {
+    .container,
+    .hero-content {
+        width: calc(100% - 28px);
+    }
+    .hero h1 {
+        font-size: clamp(2.25rem, 10.5vw, 2.8rem);
+    }
+    .hero-small {
+        font-size: 9px;
+        letter-spacing: 1px;
+        padding: 8px 11px;
+    }
+    .gallery-grid {
+        grid-auto-rows: 135px;
+        gap: 8px;
+    }
+    .account-number-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .copy-btn {
+        width: 100%;
+    }
+    .mobile-nav-item small {
+        font-size: 8px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+
+
+<style>
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    min-width: 320px;
+}
+
+.container,
+.hero-content,
+.nav-container,
+section,
+footer,
+.about-grid,
+.leader-grid,
+.pastor-grid,
+.service-grid,
+.sermon-grid,
+.gallery-grid,
+.contact-grid,
+.footer-grid {
+    min-width: 0;
+}
+
+.sermon-grid.text-sermon-grid {
+    align-items: stretch;
+}
+
+.text-sermon-card {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    align-items: start;
+    gap: 0;
+    padding: 8px 0;
+}
+
+.sermon-index {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    margin: 24px 0 0 20px;
+    border-radius: 12px;
+    background: var(--soft-green);
+    color: var(--green);
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.text-sermon-card .sermon-content {
+    padding: 22px 22px 22px 18px;
+}
+
+.sermon-topic {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .about-grid,
+    .leader-grid,
+    .pastor-grid,
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .service-grid,
+    .sermon-grid.text-sermon-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .navbar {
+        display: none !important;
+    }
+
+    .hero {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .container,
+    .hero-content {
+        width: calc(100% - 32px);
+    }
+
+    section {
+        padding-block: 48px;
+    }
+
+    .center-heading {
+        width: 100%;
+        padding-inline: 2px;
+        margin-bottom: 28px;
+    }
+
+    .section-title {
+        font-size: clamp(1.9rem, 8vw, 2.6rem);
+        line-height: 1.12;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .section-text {
+        max-width: 36ch;
+        margin-inline: auto;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .hero {
+        min-height: 100svh;
+        min-height: 100dvh;
+    }
+
+    .hero-content {
+        padding-block: 76px 76px;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+        font-size: clamp(2.3rem, 10.5vw, 3.5rem);
+        line-height: 1.04;
+        overflow-wrap: normal;
+    }
+
+    .hero p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 13px 16px;
+    }
+
+    .about-grid,
+    .leader-grid,
+    .pastor-grid {
+        gap: 26px;
+    }
+
+    .about-image,
+    .leader-image,
+    .pastor-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-image img,
+    .leader-image img,
+    .pastor-image img {
+        width: 100%;
+        height: auto;
+        max-height: 440px;
+        aspect-ratio: 4 / 4.2;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .about-badge {
+        right: 10px;
+        bottom: 10px;
+        width: auto;
+        max-width: calc(100% - 20px);
+        padding: 12px 14px;
+    }
+
+    .about-badge strong {
+        font-size: 20px;
+    }
+
+    .leader-card,
+    .pastor-card {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        padding: 13px;
+    }
+
+    .leader-card strong,
+    .pastor-card strong {
+        font-size: 18px;
+    }
+
+    .service-grid,
+    .sermon-grid.text-sermon-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        margin-top: 26px;
+    }
+
+    .service-card {
+        padding: 22px;
+    }
+
+    .text-sermon-card {
+        grid-template-columns: 48px minmax(0, 1fr);
+        padding: 0;
+        border-radius: 18px;
+    }
+
+    .sermon-index {
+        width: 32px;
+        height: 32px;
+        margin: 22px 0 0 14px;
+        border-radius: 10px;
+        font-size: 11px;
+    }
+
+    .text-sermon-card .sermon-content {
+        padding: 20px 16px 20px 12px;
+    }
+
+    .text-sermon-card .sermon-content h3 {
+        font-size: 17px;
+        line-height: 1.35;
+    }
+
+    .text-sermon-card .sermon-content p {
+        font-size: 13px;
+        line-height: 1.7;
+        overflow-wrap: break-word;
+    }
+
+    .sermon-topic {
+        font-size: 10px;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        grid-template-rows: none;
+        gap: 10px;
+        margin-top: 26px;
+    }
+
+    .gallery-item,
+    .gallery-item:first-child {
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        grid-row: auto;
+        border-radius: 13px;
+    }
+
+    .gallery-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .gallery-overlay {
+        opacity: 1;
+        pointer-events: none;
+        background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,.12));
+    }
+
+    .gallery-action {
+        margin-top: 24px;
+    }
+
+    .gallery-view-btn {
+        width: min(100%, 320px);
+        min-height: 48px;
+        margin-top: 0;
+        padding: 14px 18px;
+    }
+
+    .accounts-wrap {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .account-box {
+        padding: 18px;
+    }
+
+    .account-number-row {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .account-number {
+        font-size: clamp(15px, 4.4vw, 18px);
+        letter-spacing: .2px;
+        overflow-wrap: anywhere;
+    }
+
+    .copy-btn {
+        min-height: 42px;
+        padding: 10px 13px;
+    }
+
+    .contact-grid {
+        gap: 26px;
+    }
+
+    .contact-box {
+        align-items: flex-start;
+        padding: 14px;
+        gap: 11px;
+    }
+
+    .contact-box > div:last-child {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-box span {
+        font-size: 12px;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-form {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .input-group input,
+    .input-group textarea,
+    .input-group select,
+    .input-group button {
+        width: 100%;
+        min-width: 0;
+        font-size: 16px;
+    }
+
+    .whatsapp-direct-card {
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .whatsapp-direct-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .whatsapp-direct-content h3 {
+        font-size: 21px;
+        line-height: 1.3;
+    }
+
+    .whatsapp-direct-link,
+    .whatsapp-btn {
+        width: 100% !important;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        line-height: 1.65;
+    }
+
+    body {
+        padding-bottom: calc(76px + env(safe-area-inset-bottom));
+    }
+
+    .mobile-bottom-nav {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        padding: 7px 4px calc(7px + env(safe-area-inset-bottom));
+    }
+
+    .mobile-nav-item {
+        min-height: 48px;
+        gap: 4px;
+        font-size: 17px;
+    }
+
+    .mobile-nav-item small {
+        font-size: clamp(8px, 2.4vw, 10px);
+        letter-spacing: 0;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 380px) {
+    .container,
+    .hero-content {
+        width: calc(100% - 26px);
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 8vw, 2.2rem);
+    }
+
+    .gallery-grid {
+        gap: 7px;
+    }
+
+    .text-sermon-card {
+        grid-template-columns: 40px minmax(0, 1fr);
+    }
+
+    .sermon-index {
+        width: 28px;
+        height: 28px;
+        margin: 20px 0 0 10px;
+    }
+
+    .text-sermon-card .sermon-content {
+        padding: 18px 12px 18px 10px;
+    }
+
+    .mobile-nav-item small {
+        font-size: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .text-sermon-card,
+    .gallery-item,
+    .gallery-item img {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar" id="navbar">
+    <div class="nav-container">
+        <!-- Brand / Logo -->
+        <a href="#home" class="logo">
+     
+            <div class="logo-text"><strong>RCCG GLORYLAND PARISH</strong><span>THE REDEEMED CHRISTIAN CHURCH OF GOD</span></div>
+        </a>
+        <!-- Extra links are included in the mobile hamburger menu too. -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#sermons">Sermons</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#giving">Give</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#contact">Get Help</a></li>
+        </ul>
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    </div>
+</header>
+
+
+
+
+<section class="hero" id="home">
+
+    <div class="hero-slideshow" aria-hidden="true">
+        <img class="hero-slide active" src="images/WhatsApp Image 2026-09-23 at 11.11.04.jpeg" alt="RCCG Gloryland Parish">
+        <img class="hero-slide" src="images2/women.jpeg" alt="RCCG Gloryland Parish">
+        <img class="hero-slide" src="images/WhatsApp Image 2026-09-23 at 11.19.44.jpeg" alt="RCCG Gloryland Parish">
+        <img class="hero-slide" src="images/WhatsApp Image 2026-09-24 at 10.27.29.jpeg" alt="RCCG Gloryland Parish">
+    </div>
+
+
+    <div class="hero-content">
+
+
+        <div class="hero-small">
+
+            <span class="live-dot"></span>
+
+            RCCG GLORYLAND PARISH
+
+        </div>
+
+
+        <h1>
+
+            Welcome to 
+
+            <span>
+                GLORYLAND
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            A family of believers committed to worship,
+            fellowship, prayer and spreading the love
+            of Jesus Christ.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="#services"
+                class="btn btn-primary"
+            >
+                Join Us This Sunday →
+            </a>
+
+
+            <!-- WATCH LIVE -->
+
+            <a
+                href="https://www.youtube.com/@Rccglorylandparishabijo/"
+                target="_blank"
+                class="btn btn-outline"
+            >
+                🔴 Watch Live
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+
+            <div class="about-image reveal">
+
+                <img
+                    src="./images/church.jpeg"
+                    alt="RCCG church"
+                >
+
+
+                <div class="about-badge">
+
+                    <strong>
+                        RCCG
+                    </strong>
+
+                    <span>
+                        A global family of believers
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-content reveal">
+
+                <span class="section-label">
+                    ABOUT US
+                </span>
+
+
+                <h2 class="section-title">
+                    A place where
+                    faith comes alive.
+                </h2>
+
+
+                <p class="section-text">
+
+                    Welcome to RCCG Gloryland Parish.
+                    We are a community of people seeking
+                    God, growing together and serving
+                    others through the love of Christ.
+
+                </p>
+
+
+                <p class="section-text">
+
+                    Our desire is to create an environment
+                    where everyone can worship freely,
+                    discover God's purpose and build
+                    meaningful relationships.
+
+                </p>
+
+
+                <div class="about-points">
+
+
+                    <div class="about-point">
+
+                        <span>✓</span>
+
+                        <p>
+                            Christ-centred worship
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-point">
+
+                        <span>✓</span>
+
+                        <p>
+                            Prayer and spiritual growth
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-point">
+
+                        <span>✓</span>
+
+                        <p>
+                            Community and fellowship
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PARISH PASTOR
+===================================================== -->
+
+<section class="pastor" id="pastor">
+
+    <div class="container">
+
+        <div class="pastor-grid">
+
+            <div class="pastor-image reveal">
+
+                <!-- Replace this image with your pastor's picture -->
+                <img
+                    src="./images/pastor.jpeg"
+                    alt="Pastor Olanrewaju"
+                >
+
+                <div class="pastor-card">
+
+                    <strong>
+                        Pastor Olanrewaju
+                    </strong>
+
+                    <span>
+                        Parish Pastor, RCCG Gloryland Parish
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="pastor-content reveal">
+
+                <span class="section-label">
+                    GLORYLAND PARISH
+                </span>
+
+                <h2 class="section-title">
+                    Meet Our Pastor
+                </h2>
+
+                <p>
+                    Our parish pastor is committed to leading the church family in worship, prayer, God's Word and service.
+                </p>
+
+                <p>
+                    Through faithful leadership and care for the congregation, our pastor encourages everyone to grow in faith and live out the love of Christ.
+                </p>
+
+                <div class="leader-quote">
+                    “Serving God's people with love, faith and grace.”
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- =====================================================
+     PASTOR ADEBOYE
+===================================================== -->
+
+<section class="leader">
+
+    <div class="container">
+
+        <div class="leader-grid">
+
+
+            <div class="leader-image reveal">
+
+                <img
+                    src="./images/EA-Adeboye-980x910.jpg"
+                    alt="Pastor E.A. Adeboye"
+                >
+
+
+                <div class="leader-card">
+
+                    <strong>
+                        Pastor E.A. Adeboye
+                    </strong>
+
+                    <span>
+                        General Overseer, RCCG Worldwide
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="leader-content reveal">
+
+                <span class="section-label">
+                    RCCG WORLDWIDE
+                </span>
+
+
+                <h2 class="section-title">
+                    Our General Overseer
+                </h2>
+
+
+                <p>
+
+                    Pastor Enoch Adejare Adeboye serves
+                    as the General Overseer of The Redeemed
+                    Christian Church of God worldwide.
+
+                </p>
+
+
+                <p>
+
+                    RCCG's official history records that
+                    Pastor Adeboye joined the church in 1973,
+                    was ordained in 1975, and later succeeded
+                    Pa Josiah Akindayomi as General Overseer.
+
+                </p>
+
+
+                <div class="leader-quote">
+
+                    “We want to make heaven and take as
+                    many people with us.”
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+
+        <div class="center-heading reveal">
+
+            <span class="section-label">
+                JOIN US
+            </span>
+
+
+            <h2 class="section-title">
+                Worship with us.
+            </h2>
+
+
+            <p class="section-text">
+                Come as you are and experience worship,
+                fellowship and God's presence.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    ☀
+                </div>
+
+                <h3>
+                    Sunday Services
+                </h3>
+
+                <p>
+                    <strong>First Service:</strong> 7:30 AM – 9:00 AM
+                    <br>
+                    <strong>Sunday School:</strong> 9:00 AM – 9:45 AM
+                    <br>
+                    <strong>Second Service:</strong> 9:45 AM – 12:00 PM
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    🙏
+                </div>
+
+                <h3>
+                    Faith Clinic
+                </h3>
+
+                <p>
+                    Prayer and spiritual growth
+                    for the entire church family.
+                </p>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Bible Study
+                </h3>
+
+                <p>
+                    Discover God's Word and grow
+                    deeper in your faith.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERMONS
+===================================================== -->
+
+<section class="sermons" id="sermons">
+
+    <div class="container">
+
+
+        <div class="center-heading reveal">
+
+            <span class="section-label">
+                THE WORD
+            </span>
+
+
+            <h2 class="section-title">
+                Latest Sermons
+            </h2>
+
+
+            <p class="section-text">
+                Grow in faith through the teaching
+                of God's Word.
+            </p>
+
+        </div>
+
+
+        <div class="sermon-grid text-sermon-grid">
+
+            <article class="sermon-card text-sermon-card reveal">
+                <div class="sermon-index" aria-hidden="true">01</div>
+                <div class="sermon-content">
+                    <small>FAITH & SPIRITUAL GROWTH</small>
+                    <h3>Walking in Faith</h3>
+                    <p>Faith means trusting God's promises, following His direction and remaining hopeful even when the way ahead is unclear.</p>
+                    <span class="sermon-topic">A reflection on Hebrews 11:1</span>
+                </div>
+            </article>
+
+            <article class="sermon-card text-sermon-card reveal">
+                <div class="sermon-index" aria-hidden="true">02</div>
+                <div class="sermon-content">
+                    <small>WORSHIP & PRAYER</small>
+                    <h3>The Power of Prayer</h3>
+                    <p>Prayer helps us draw closer to God, seek His wisdom and bring our needs, gratitude and concerns before Him.</p>
+                    <span class="sermon-topic">A reflection on Philippians 4:6–7</span>
+                </div>
+            </article>
+
+            <article class="sermon-card text-sermon-card reveal">
+                <div class="sermon-index" aria-hidden="true">03</div>
+                <div class="sermon-content">
+                    <small>WORD & WORSHIP</small>
+                    <h3>Living for Christ</h3>
+                    <p>Our daily choices can reflect the love of Jesus through kindness, service, integrity and care for others.</p>
+                    <span class="sermon-topic">A reflection on Galatians 2:20</span>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GIVING
+===================================================== -->
+
+<section class="giving" id="giving">
+
+    <div class="container">
+
+        <div class="giving-intro reveal">
+
+            <span class="section-label">
+                GIVING
+            </span>
+
+            <h2 class="section-title">
+                Give with joy.
+            </h2>
+
+            <p class="section-text">
+                Your generosity helps support the work of the church and the people we serve.
+            </p>
+
+        </div>
+
+        <div class="accounts-wrap reveal" id="accountSection">
+
+            <div class="accounts-list">
+
+                <div class="account-box">
+
+                    <div class="account-bank">
+                        ACCOUNT 1 · GTB BANK
+                    </div>
+
+                    <div class="account-name">
+                        RCCG GLORYLANDPARISH
+                    </div>
+
+                    <div class="account-number-row">
+
+                        <div>
+                            <span class="account-number-label">
+                                Account Number
+                            </span>
+                            <strong class="account-number" id="accountNumber1">
+                                0109568770
+                            </strong>
+                        </div>
+
+                        <button
+                            class="copy-btn"
+                            onclick="copyAccountNumber('accountNumber1', this)"
+                        >
+                            Copy
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="account-box">
+
+                    <div class="account-bank">
+                        ACCOUNT 02 · UBA BANK
+                    </div>
+
+                    <div class="account-name">
+                        RCCG GLORYLANDPARISH
+                    </div>
+
+                    <div class="account-number-row">
+
+                        <div>
+                            <span class="account-number-label">
+                                Account Number
+                            </span>
+                            <strong class="account-number" id="accountNumber2">
+                                1018469430
+                            </strong>
+                        </div>
+
+                        <button
+                            class="copy-btn"
+                            onclick="copyAccountNumber('accountNumber2', this)"
+                        >
+                            Copy
+                        </button>
+
+                    </div>
+
+                </div>
+<!-- 
+                <button
+                    class="transfer-done"
+                    onclick="givingComplete()"
+                >
+                    I've Made the Transfer ✓
+                </button> -->
+
+            </div>
+<!-- 
+            <button
+                class="ready-give"
+                onclick="document.getElementById('accountSection').scrollIntoView({behavior:'smooth'})"
+            >
+                I'm Ready to Give
+            </button> -->
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="gallery" id="gallery">
+
+    <div class="container">
+
+
+        <div class="center-heading reveal">
+
+            <span class="section-label">
+                OUR FAMILY
+            </span>
+
+
+            <h2 class="section-title">
+                Life at Gloryland.
+            </h2>
+
+
+            <p class="section-text">
+                Moments of worship, fellowship and community.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="./images/WhatsApp Image 2026-09-28 at 02.24.03 (4).jpeg"
+                    alt="Church"
+                >
+
+                <div class="gallery-overlay"></div>
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="images/WhatsApp Image 2026-09-28 at 02.24.15 (1).jpeg"
+                    alt="Worship"
+                >
+
+                <div class="gallery-overlay"></div>
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="./images/WhatsApp Image 2026-09-28 at 02.24.12 (1).jpeg"
+                    alt="Prayer"
+                >
+
+                <div class="gallery-overlay"></div>
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="images/WhatsApp Image 2026-09-28 at 02.24.13 (1).jpeg"
+                    alt="Church fellowship"
+                >
+
+                <div class="gallery-overlay"></div>
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="./images/women.jpeg"
+                    alt="Praise and worship"
+                >
+
+                <div class="gallery-overlay"></div>
+
+            </div>
+
+
+        </div>
+
+        <!-- Opens a dedicated page containing all available site images. -->
+        <div class="gallery-action reveal">
+            <a class="gallery-view-btn" href="gallery.html">View All Images →</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+
+        <div class="contact-grid">
+
+
+            <div class="reveal">
+
+                <span class="section-label">
+                    CONTACT US
+                </span>
+
+
+                <h2 class="section-title">
+                    We'd love to
+                    hear from you.
+                </h2>
+
+
+                <p class="section-text">
+
+                    Have a question, need prayer or want
+                    to visit us? Send us a message.
+
+                </p>
+
+
+                <div class="contact-info">
+
+
+                    <div class="contact-box">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Location
+                            </strong>
+
+                            <span>
+         Beside Casia Estate, Opposite Corona Schools, Abijo, Ajah, lagos, Nigeria
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-box">
+
+                        <div class="contact-icon">
+                            ☎
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Phone
+                            </strong>
+
+                            <span>
+                               0802 222 0536
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-box">
+
+                        <div class="contact-icon">
+                            ✉
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Email
+                            </strong>
+
+                            <span>
+Rccglorylandparish@gmail.com
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="whatsapp-direct-card reveal">
+                <div class="whatsapp-direct-icon" aria-hidden="true">☘</div>
+                <div class="whatsapp-direct-content">
+                    <span class="whatsapp-direct-label">CHAT WITH US</span>
+                    <h3>Talk to RCCG Gloryland Parish on WhatsApp</h3>
+                    <p>
+                        Have a question, need help, or want to connect with us?
+                        Send us a message directly on WhatsApp. No form is required.
+                    </p>
+                    <a
+                        class="btn whatsapp-btn whatsapp-direct-link"
+                        href="https://wa.me/2348022220536"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Chat Us on WhatsApp ↗
+                    </a>
+                </div>
+            </div>
+</div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAVIGATION
+===================================================== -->
+
+<nav class="mobile-bottom-nav" id="mobileBottomNav">
+
+    <a href="#home" class="mobile-nav-item active" data-section="home">
+        <span>⌂</span>
+        <small>Home</small>
+    </a>
+
+    <a href="#about" class="mobile-nav-item" data-section="about">
+        <span>◉</span>
+        <small>About</small>
+    </a>
+
+    <a href="#sermons" class="mobile-nav-item" data-section="sermons">
+        <span>▤</span>
+        <small>Sermons</small>
+    </a>
+
+    <a href="#gallery" class="mobile-nav-item" data-section="gallery">
+        <span>▧</span>
+        <small>Gallery</small>
+    </a>
+
+    <a href="#giving" class="mobile-nav-item" data-section="giving">
+        <span>♡</span>
+        <small>Give</small>
+    </a>
+
+</nav>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <div class="footer-logo">
+
+                    <img
+                        src="./images/Rccg_logo.png"
+                        alt="RCCG Logo"
+                    >
+
+                    <div>
+
+                        <strong>
+                            RCCG Gloryland Parish
+                        </strong>
+
+                        <span>
+                            The Redeemed Christian Church of God
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p class="footer-about">
+
+                    A family of believers committed to
+                    worship, prayer, fellowship and
+                    spreading the love of Jesus Christ.
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Quick Links
+                </h4>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#sermons">Sermons</a>
+                    </li>
+
+                    <li>
+                        <a href="#giving">Give</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    RCCG
+                </h4>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a
+                            href="https://www.rccg.org/"
+                            target="_blank"
+                        >
+                            Official RCCG Website
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.rccg.org/redemption-tv/"
+                            target="_blank"
+                        >
+                            Redemption TV
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.rccg.org/"
+                            target="_blank"
+                        >
+                            Watch RCCG Live
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 RCCG Gloryland Parish. All rights reserved.
+            </span>
+
+            <span>
+                Jesus Christ is Lord.
+            </span>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuBtn.addEventListener("click", function() {
+    const isOpen = navLinks.classList.toggle("active");
+    menuBtn.classList.toggle("active", isOpen);
+    menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
+
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            navLinks.classList.remove("active");
+            menuBtn.classList.remove("active");
+            menuBtn.setAttribute("aria-expanded", "false");
+
+        });
+
+    });
+
+
+
+
+window.addEventListener("scroll", function() {
+
+    const navbar =
+        document.getElementById("navbar");
+
+    if (window.scrollY > 40) {
+
+        navbar.classList.add("scrolled");
+
+    } else {
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+
+const observer =
+    new IntersectionObserver(
+        function(entries) {
+
+            entries.forEach(function(entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(function(element) {
+
+        observer.observe(element);
+
+    });
+
+
+
+/* =========================================================
+   GIVING OPTIONS
+========================================================= */
+
+function selectGiving(button) {
+
+    document
+        .querySelectorAll(".give-option")
+        .forEach(function(option) {
+
+            option.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+}
+
+
+
+/* =========================================================
+   COPY ACCOUNT NUMBER
+========================================================= */
+
+function openSelectedBank() {
+
+    const select = document.getElementById("bankSelect");
+    const option = select.options[select.selectedIndex];
+
+    if (!option || !option.dataset.url) {
+        alert("Please select your bank first.");
+        return;
+    }
+
+    window.open(option.dataset.url, "_blank", "noopener,noreferrer");
+}
+
+
+function copyAccountNumber(accountId, button) {
+
+    const account = document
+        .getElementById(accountId)
+        .innerText
+        .trim();
+
+    navigator.clipboard
+        .writeText(account)
+        .then(function() {
+            button.innerText = "Copied ✓";
+
+            setTimeout(function() {
+                button.innerText = "Copy";
+            }, 2000);
+        });
+
+}
+
+
+
+/* =========================================================
+   GIVING COMPLETE
+========================================================= */
+
+function givingComplete() {
+
+    alert(
+        "Thank you for giving. Please keep your bank transfer receipt for your records. God bless you! ❤️"
+    );
+
+}
+
+
+
+/* =========================================================
+   MOBILE BOTTOM NAV ACTIVE STATE
+========================================================= */
+
+const mobileNavItems = document.querySelectorAll(".mobile-nav-item");
+const mobileSections = document.querySelectorAll("#home, #about, #sermons, #gallery, #giving");
+
+window.addEventListener("scroll", function() {
+
+    let current = "home";
+
+    mobileSections.forEach(function(section) {
+        const top = section.getBoundingClientRect().top;
+
+        if (top <= 180) {
+            current = section.id;
+        }
+    });
+
+    mobileNavItems.forEach(function(item) {
+        item.classList.toggle("active", item.dataset.section === current);
+    });
+
+});
+
+mobileNavItems.forEach(function(item) {
+    item.addEventListener("click", function() {
+        mobileNavItems.forEach(function(nav) {
+            nav.classList.remove("active");
+        });
+        item.classList.add("active");
+    });
+});
+
+
+
+/* =========================================================
+   WHATSAPP DIRECT CHAT
+========================================================= */
+
+</script>
+
+
+
+<script>
+const heroSlides = document.querySelectorAll(".hero-slide");
+let heroSlideIndex = 0;
+
+if (heroSlides.length > 1) {
+    setInterval(function() {
+        heroSlides[heroSlideIndex].classList.remove("active");
+        heroSlideIndex = (heroSlideIndex + 1) % heroSlides.length;
+        heroSlides[heroSlideIndex].classList.add("active");
+    }, 5000);
+}
+</script>
+
+<script>
+/* Smooth reveal animations as sections/cards enter the screen */
+document.addEventListener("DOMContentLoaded", function () {
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if (!("IntersectionObserver" in window)) {
+        revealItems.forEach(el => el.classList.add("active"));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+    });
+
+    revealItems.forEach((el) => observer.observe(el));
+});
+</script>
+
+</body>
+</html>

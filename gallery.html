@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f6f7f2">
+    <meta name="description" content="Explore worship, fellowship and community moments at RCCG Gloryland Parish.">
+    <title>Our Family | RCCG Gloryland Parish</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--green:#176b2c;--dark:#0c421a;--cream:#f6f7f2;--ink:#17251a;--muted:#6e786f;--orange:#ff9d32;--shadow:0 22px 58px rgba(15,70,27,.15)}
+        *{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+        a{color:inherit;text-decoration:none}
+        button{font:inherit}
+        .site-header{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;width:min(1180px,calc(100% - 48px));margin:auto}
+        .brand{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.02em;color:var(--dark)}
+        .brand-mark{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:var(--green);color:white;font-size:16px;box-shadow:0 7px 18px rgba(23,107,44,.16)}
+        .header-links{display:flex;align-items:center;gap:25px;font-size:12px;font-weight:700;color:#5d685f}
+        .header-links a{transition:color .2s ease}
+        .header-links a:hover{color:var(--green)}
+        .back-link{padding:10px 16px;border-radius:999px;background:var(--orange);color:#fff;font-size:11px;font-weight:800;box-shadow:0 7px 18px rgba(255,157,50,.2);transition:transform .25s ease,box-shadow .25s ease}
+        .back-link:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(255,157,50,.28)}
+        main{width:min(1180px,calc(100% - 48px));margin:auto;padding-bottom:76px}
+        .intro{padding:32px 0 8px;text-align:center;animation:rise .7s ease both}
+        .eyebrow{display:inline-block;padding:8px 13px;border-radius:999px;background:#e7f2e5;color:var(--green);font-size:10px;font-weight:800;letter-spacing:2px}
+        h1{font-family:"Playfair Display",serif;color:var(--dark);font-size:clamp(38px,5vw,61px);line-height:1.05;font-weight:600;margin:16px 0 12px;letter-spacing:-.03em}
+        .intro p{max-width:530px;margin:auto;color:var(--muted);font-size:14px;line-height:1.8}
+        .featured-info{text-align:center;margin:26px 0 8px;animation:rise .8s .08s ease both}
+        .featured-info h2{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(20px,2.6vw,28px);color:var(--dark);margin-bottom:4px}
+        .featured-info p{font-size:11px;color:var(--muted);letter-spacing:.04em}
+        .gallery-stage{height:clamp(330px,39vw,440px);position:relative;width:100%;overflow:hidden;isolation:isolate}
+        .fan-card{position:absolute;left:50%;top:50%;width:clamp(145px,17.5vw,212px);height:clamp(260px,30vw,342px);padding:8px 8px 10px;background:#fff;border:1px solid rgba(20,65,28,.06);border-radius:21px;box-shadow:var(--shadow);transform-origin:center center;transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .35s ease,box-shadow .35s ease;will-change:transform;}
+        .fan-card.is-active{box-shadow:0 26px 66px rgba(12,66,26,.22)}
+        .fan-card img{display:block;width:100%;height:calc(100% - 39px);object-fit:cover;border-radius:15px;background:#e8eee7;user-select:none}
+        .fan-card-footer{height:39px;display:flex;align-items:flex-end;padding-top:7px}
+        .view-image{border:0;border-radius:999px;background:#eaf5e9;color:var(--green);width:100%;height:31px;font-weight:800;font-size:10px;cursor:pointer;transition:background .25s ease,color .25s ease,transform .25s ease}
+        .view-image:hover{background:var(--green);color:#fff;transform:translateY(-1px)}
+        .controls{display:flex;align-items:center;justify-content:center;gap:18px;margin:2px auto 20px}
+        .arrow-btn{width:37px;height:37px;border:1px solid #e2e8de;border-radius:50%;background:#fff;color:var(--green);display:grid;place-items:center;font-size:20px;cursor:pointer;transition:transform .2s ease,background .2s ease,color .2s ease}
+        .arrow-btn:hover{background:var(--green);color:white;transform:translateY(-2px)}
+        .dots{display:flex;align-items:center;gap:7px}
+        .dot{width:7px;height:7px;border-radius:999px;background:#cbd6c8;border:0;padding:0;cursor:pointer;transition:width .25s ease,background .25s ease}
+        .dot.active{width:22px;background:var(--orange)}
+        .gallery-note{text-align:center;font-size:11px;color:#869087;margin-top:4px}
+        .gallery-note strong{color:var(--green)}
+        .modal{position:fixed;inset:0;z-index:20;background:rgba(4,20,8,.88);display:none;align-items:center;justify-content:center;padding:22px;backdrop-filter:blur(8px)}
+        .modal.open{display:flex;animation:fade .2s ease both}
+        .modal-content{position:relative;max-width:min(920px,100%);max-height:90vh;display:flex;flex-direction:column;align-items:center;gap:12px}
+        .modal img{display:block;max-width:100%;max-height:78vh;object-fit:contain;border-radius:15px;box-shadow:0 20px 70px rgba(0,0,0,.28)}
+        .modal-caption{color:white;text-align:center;font-size:13px;font-weight:700}
+        .modal-close{position:absolute;top:-15px;right:-15px;width:40px;height:40px;border:0;border-radius:50%;background:#fff;color:var(--dark);font-size:23px;cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.25)}
+        @keyframes rise{from{opacity:0;transform:translateY(17px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fade{from{opacity:0}to{opacity:1}}
+        @media(max-width:760px){
+            .site-header{height:64px;width:calc(100% - 30px)}
+            .brand{font-size:10px;max-width:210px}
+            .brand-mark{width:31px;height:31px;flex-shrink:0}
+            .header-links{gap:10px}
+            .header-links a:not(.back-link){display:none}
+            .back-link{padding:10px 13px;font-size:10px;white-space:nowrap}
+            main{width:calc(100% - 28px);padding-bottom:36px}
+            .intro{padding-top:28px}
+            .intro p{font-size:13px;max-width:350px}
+            .featured-info{margin-top:24px}
+            .gallery-stage{height:360px;overflow:hidden;margin-inline:-2px;width:calc(100% + 4px)}
+            .fan-card{width:clamp(145px,45vw,190px);height:clamp(250px,75vw,300px);padding:7px 7px 9px;border-radius:19px}
+            .fan-card img{border-radius:13px}
+            .view-image{height:30px;font-size:10px}
+            .controls{margin-top:0}
+        }
+        @media(max-width:390px){
+            .site-header{width:calc(100% - 22px)}
+            main{width:calc(100% - 22px)}
+            h1{font-size:38px}
+            .gallery-stage{height:330px}
+            .fan-card{height:250px;width:145px}
+        }
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="RCCG Gloryland Parish home">
+            <span class="brand-mark" aria-hidden="true">✦</span>
+            <span>RCCG GLORYLAND PARISH</span>
+        </a>
+        <nav class="header-links" aria-label="Main navigation">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About Us</a>
+            <a href="index.html#sermons">Sermons</a>
+            <a href="index.html#contact">Contact</a>
+            <a class="back-link" href="index.html#gallery">Back to website ↗</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro" aria-labelledby="page-title">
+            <span class="eyebrow">OUR FAMILY</span>
+            <h1 id="page-title">Life at Gloryland.</h1>
+            <p>Moments of worship, fellowship and community. Take a closer look at the people and moments that make our church family special.</p>
+        </section>
+
+        <div class="featured-info" aria-live="polite">
+            <h2 id="featured-title">Moments of Prayer</h2>
+            <p id="featured-count">A GLIMPSE INTO OUR CHURCH FAMILY · 03 / 05</p>
+        </div>
+
+        <section class="gallery-stage" id="galleryStage" aria-label="Gloryland photo gallery">
+            <figure class="fan-card" data-title="Church Family">
+                <img src="./images/WhatsApp Image 2026-09-28 at 02.24.03 (4).jpeg" alt="Church family gathered together">
+                <figcaption class="fan-card-footer"><button class="view-image" type="button">View image</button></figcaption>
+            </figure>
+            <figure class="fan-card" data-title="Worship Together">
+                <img src="./images/WhatsApp Image 2026-09-28 at 02.24.15 (1).jpeg" alt="Worship at Gloryland Parish">
+                <figcaption class="fan-card-footer"><button class="view-image" type="button">View image</button></figcaption>
+            </figure>
+            <figure class="fan-card" data-title="Moments of Prayer">
+                <img src="./images/WhatsApp Image 2026-09-28 at 02.24.12 (1).jpeg" alt="Prayer at Gloryland Parish">
+                <figcaption class="fan-card-footer"><button class="view-image" type="button">View image</button></figcaption>
+            </figure>
+            <figure class="fan-card" data-title="Church Fellowship">
+                <img src="./images/WhatsApp Image 2026-09-28 at 02.24.13 (1).jpeg" alt="Church members enjoying fellowship">
+                <figcaption class="fan-card-footer"><button class="view-image" type="button">View image</button></figcaption>
+            </figure>
+            <figure class="fan-card" data-title="Praise and Worship">
+                <img src="./images/women.jpeg" alt="Praise and worship at Gloryland Parish">
+                <figcaption class="fan-card-footer"><button class="view-image" type="button">View image</button></figcaption>
+            </figure>
+        </section>
+
+        <div class="controls" aria-label="Gallery controls">
+            <button class="arrow-btn" id="previousPhoto" type="button" aria-label="Previous photo">‹</button>
+            <div class="dots" id="galleryDots" aria-label="Choose a photo"></div>
+            <button class="arrow-btn" id="nextPhoto" type="button" aria-label="Next photo">›</button>
+        </div>
+        <p class="gallery-note">Tap any photo to bring it forward, or choose <strong>View image</strong> for a closer look.</p>
+    </main>
+
+    <div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Gallery image viewer">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" type="button" aria-label="Close image viewer">×</button>
+            <img id="modalImage" src="" alt="">
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+
+    <script>
+        const cards = Array.from(document.querySelectorAll('.fan-card'));
+        const featuredTitle = document.getElementById('featured-title');
+        const featuredCount = document.getElementById('featured-count');
+        const dotsContainer = document.getElementById('galleryDots');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        let activeIndex = 2;
+        let lastFocus = null;
+
+        cards.forEach((card, index) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'dot';
+            dot.setAttribute('aria-label', `Show photo ${index + 1}: ${card.dataset.title}`);
+            dot.addEventListener('click', () => { activeIndex = index; renderCards(); });
+            dotsContainer.appendChild(dot);
+            card.addEventListener('click', event => {
+                if (event.target.closest('.view-image')) return;
+                activeIndex = index;
+                renderCards();
+            });
+            card.querySelector('.view-image').addEventListener('click', () => openModal(card));
+        });
+
+        function renderCards() {
+            const isMobile = window.innerWidth <= 760;
+            const step = isMobile ? Math.min(112, window.innerWidth * 0.275) : Math.min(218, Math.max(135, window.innerWidth * 0.15));
+            cards.forEach((card, index) => {
+                let offset = index - activeIndex;
+                if (offset > 2) offset -= cards.length;
+                if (offset < -2) offset += cards.length;
+                const scale = offset === 0 ? 1.08 : Math.abs(offset) === 1 ? 0.94 : 0.84;
+                const angle = offset === 0 ? 0 : offset * 6;
+                const y = offset === 0 ? -7 : Math.abs(offset) === 1 ? 2 : 12;
+                card.style.transform = `translate(-50%, -50%) translate(${offset * step}px, ${y}px) rotate(${angle}deg) scale(${scale})`;
+                card.style.zIndex = String(10 - Math.abs(offset));
+                card.classList.toggle('is-active', offset === 0);
+                card.style.opacity = isMobile && Math.abs(offset) > 1 ? '0' : '1';
+                card.style.pointerEvents = isMobile && Math.abs(offset) > 1 ? 'none' : 'auto';
+                card.setAttribute('aria-label', `${card.dataset.title}${offset === 0 ? ', selected photo' : ', select photo'}`);
+            });
+            featuredTitle.textContent = cards[activeIndex].dataset.title;
+            featuredCount.textContent = `A GLIMPSE INTO OUR CHURCH FAMILY · ${String(activeIndex + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
+            Array.from(dotsContainer.children).forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeIndex);
+                dot.setAttribute('aria-pressed', index === activeIndex ? 'true' : 'false');
+            });
+        }
+
+        function openModal(card) {
+            const img = card.querySelector('img');
+            lastFocus = document.activeElement;
+            modalImage.src = img.src;
+            modalImage.alt = img.alt;
+            modalCaption.textContent = card.dataset.title;
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('closeModal').focus();
+        }
+
+        function closeModal() {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+            modalImage.src = '';
+            if (lastFocus) lastFocus.focus();
+        }
+
+        document.getElementById('previousPhoto').addEventListener('click', () => {
+            activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+            renderCards();
+        });
+        document.getElementById('nextPhoto').addEventListener('click', () => {
+            activeIndex = (activeIndex + 1) % cards.length;
+            renderCards();
+        });
+        document.getElementById('closeModal').addEventListener('click', closeModal);
+        modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && modal.classList.contains('open')) closeModal();
+            if (modal.classList.contains('open')) return;
+            if (event.key === 'ArrowLeft') {
+                activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+                renderCards();
+            }
+            if (event.key === 'ArrowRight') {
+                activeIndex = (activeIndex + 1) % cards.length;
+                renderCards();
+            }
+        });
+        window.addEventListener('resize', renderCards);
+        renderCards();
+    </script>
+</body>
+</html>
